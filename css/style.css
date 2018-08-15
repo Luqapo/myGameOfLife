@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #13979E;
+}
+
+#board div {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #28B097;
+    background-color: #ffffff;
+    float: left;
+}
+
+#board div.live {
+    background-color: #CF2B5A;
+}
+
+#board {
+    margin: 50px auto 0;
+    min-height: 100px;
+    min-width: 100px
+}
+
+#game-set {
+    margin: 20px auto;
+    width: 200px;
+    display: none;
+}
+
+#play, #startGame{
+    width: 98px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #006600;
+    color: white;
+}
+
+#pause{
+    width: 98px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: lightslategrey;
+    color: white;
+}
+
+fieldset{
+    width: 300px;
+    margin: 40px auto;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    width: 43%;
+}
+
+input {
+    margin: 1rem 0;
+}
+
+label {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+input:invalid + span:after {
+    content: '✖';
+    color: #f00;
+    padding-left: 5px;
+}
+
+input:valid + span:after {
+    content: '✓';
+    color: #26b72b;
+    padding-left: 5px;
+}
+
+#start{
+    width: 800px;
+    margin: 50px auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+code{
+    font-size: 20px;
+}
+
+#startGame {
+    margin: 10px 100px;
+}

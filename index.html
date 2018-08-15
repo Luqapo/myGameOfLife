@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>let's play</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div id="start">
+            <h2>The Game of Life   <code>by Lucjan Wiśnicz</code></h2>
+            <p>
+                Gra toczy się na planszy (płaszczyźnie) podzielonej na kwadratowe komórki. Każda komórka
+                ma ośmiu „sąsiadów” (tzw.sąsiedztwo Moore’a), czyli komórki przylegające do niej bokami i rogami.
+                Każda komórka może znajdować się w jednym z dwóch stanów: może być albo „żywa” (włączona), albo „martwa”
+                (wyłączona). Stany komórek zmieniają się w pewnych jednostkach czasu. Stan wszystkich komórek w
+                pewnej jednostce czasu jest używany do obliczenia stanu wszystkich komórek w następnej jednostce. Po
+                obliczeniu wszystkie komórki zmieniają swój stan dokładnie w tym samym momencie. Stan komórki zależy
+                tylko od liczby jej żywych sąsiadów. W grze w życie nie ma graczy w dosłownym tego słowa znaczeniu.
+                Udział człowieka sprowadza się jedynie do ustalenia stanu początkowego komórek.
+            </p>
+            <hr>
+            <p>
+                Wybierz wielkość planszy na jakiej ma toczyć się gra.<br> Następnie ustal początkowy stan komórek, poprzez
+                najechanie myszką, w każdym momencie możesz<br> zatrzymać grę i zmienić stan komórek.
+            </p>
+            <fieldset>
+                <legend>Wielkość planszy</legend>
+
+                <label for="width">Szerokość:</label>
+                <input type="number" id="width" name="width"
+                       placeholder="Min: 10, max: 80"
+                       min="10" max="80"/>
+                <span class="validity"></span>
+
+                <label for="height">Wysokość:</label>
+                <input type="number" id="height" name="height"
+                       placeholder="Min: 10, max: 80"
+                       min="10" max="80" />
+                <span class="validity"></span>
+                <button id="startGame">Start</button>
+            </fieldset>
+
+        </div>
+        <section id="board">
+        </section> 
+        <section id="game-set">
+            <button id="play">graj</button>
+            <button id="pause">pauza</button>
+        </section>
+    </div>
+</body>
+
+</html>
