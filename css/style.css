@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
 }
 
 #board div {
@@ -29,19 +29,21 @@ body {
 #board {
     margin: 30px auto;
     min-height: 100px;
-    min-width: 100px
+    min-width: 100px;
+    display: none;
 }
 
 #game-set {
     margin: 10px;
-    width: 100px;
+    width: 150px;
     display: none;
+    background: linear-gradient(to bottom, #deefff 0%,#98bede 100%);
 }
 
 #play, #startGame, #random{
     width: 98px;
     height: 25px;
-    margin: 10px;
+    margin: 10px 24px;
     border: 2px solid green;
     border-radius: 12px;
     background-color: white;
@@ -60,7 +62,7 @@ body {
 #pause, #back{
     width: 97px;
     height: 25px;
-    margin: 10px;
+    margin: 10px 24px;
     border: 2px solid lightslategrey;
     border-radius: 12px;
     background-color: white;
