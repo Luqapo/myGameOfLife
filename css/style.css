@@ -20,21 +20,28 @@ body {
     background-color: #CF2B5A;
 }
 
+.flex-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
 #board {
-    margin: 30px auto 0;
+    margin: 30px auto;
     min-height: 100px;
     min-width: 100px
 }
 
 #game-set {
-    margin: 10px auto;
-    width: 200px;
+    margin: 10px;
+    width: 100px;
     display: none;
 }
 
 #play, #startGame, #random{
     width: 98px;
     height: 25px;
+    margin: 10px;
     border: 2px solid green;
     border-radius: 12px;
     background-color: white;
@@ -53,6 +60,7 @@ body {
 #pause, #back{
     width: 97px;
     height: 25px;
+    margin: 10px;
     border: 2px solid lightslategrey;
     border-radius: 12px;
     background-color: white;
@@ -127,8 +135,5 @@ code{
     margin: 10px 100px;
 }
 
-#random, #back{
-    margin-top: 3px;
-}
 
 
