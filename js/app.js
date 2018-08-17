@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",function(){
             this.cells.forEach(function(a){
                 return a.addEventListener("mouseenter",function(){
                     this.classList.toggle("live");
-                })
+                });
             })
         }
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         this.playGame = function(){
             var self = this;
-            this.pauseId = setInterval(function(){
+            game.pauseId = setInterval(function(){
                 self.computeNextGeneration();
                 self.printNextGeneration();
             }, 500);
@@ -95,30 +95,76 @@ document.addEventListener("DOMContentLoaded",function(){
 
             var play = document.getElementById("play");
             var pause = document.getElementById("pause");
+            var random = document.getElementById("random");
+            var back = document.getElementById("back");
 
             play.addEventListener("click",function(){
+                var oldBoard = document.getElementById("board");
+                var newBoard = oldBoard.cloneNode(true);
+                oldBoard.parentElement.removeChild(oldBoard);
+                var flexContainer = document.querySelector(".flex-container");
+                var gameSet = document.getElementById("game-set");
+                flexContainer.insertBefore(newBoard,gameSet);
+                game.board = document.getElementById("board");
+                game.cells = document.querySelectorAll("#board div");
+                random.style.display = "none";
                 game.playGame();
             })
 
             pause.addEventListener("click",function () {
                 clearInterval(game.pauseId);
+                random.style.display = "inline-block";
+                this.cells = document.querySelectorAll("#board div");
+                this.cells.forEach(function(a){
+                    return a.addEventListener("mouseenter",function(){
+                        this.classList.toggle("live");
+                    });
+                })
+            })
+
+            random.addEventListener("click",function(){
+                for(var i = 0; i<game.height; i++){
+                    for(var j = 0; j<game.width; j++){
+                        var rand = Math.round(Math.random());
+                        var state = '';
+                        if(rand == 1){
+                            state = "live";
+                        }
+                        game.setCellState(j,i,state);
+                    }
+                }
+            })
+
+            back.addEventListener("click",function(){
+                clearInterval(game.pauseId);
+                game.board.style.display = "none";
+                game.cells.forEach(function(a){
+                    return a.parentElement.removeChild(a);
+                })
+                document.getElementById("game-set").style.display = "none";
+                document.getElementById("start").style.display = "block";
+
             })
         }
+
     }
 
     var startGame = document.getElementById("startGame");
     var boardWidth = 0;
     var boardHeight = 0;
-    var game = {};
 
     startGame.addEventListener("click",function(){
         boardWidth = document.getElementById("width").value;
         boardHeight = document.getElementById("height").value;
-        document.getElementById("start").style.display = "none";
-        document.getElementById("game-set").style.display = "block";
+        if(boardHeight >= 10 && boardHeight <= 80 && boardWidth >= 10 && boardWidth <= 80) {
+            document.getElementById("start").style.display = "none";
+            document.getElementById("board").style.display = "block";
+            document.getElementById("game-set").style.display = "block";
+            document.getElementById("random").style.display = "inline-block";
 
-        game = new GameOfLife(boardWidth,boardHeight);
-        game.startGame();
+            game = new GameOfLife(boardWidth, boardHeight);
+            game.startGame();
+        }
     })
 
 

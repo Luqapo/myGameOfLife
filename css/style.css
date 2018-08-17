@@ -21,18 +21,18 @@ body {
 }
 
 #board {
-    margin: 50px auto 0;
+    margin: 30px auto 0;
     min-height: 100px;
     min-width: 100px
 }
 
 #game-set {
-    margin: 20px auto;
+    margin: 10px auto;
     width: 200px;
     display: none;
 }
 
-#play, #startGame{
+#play, #startGame, #random{
     width: 98px;
     height: 25px;
     border-radius: 5px;
@@ -40,8 +40,8 @@ body {
     color: white;
 }
 
-#pause{
-    width: 98px;
+#pause, #back{
+    width: 97px;
     height: 25px;
     border-radius: 5px;
     background-color: lightslategrey;
@@ -106,3 +106,9 @@ code{
 #startGame {
     margin: 10px 100px;
 }
+
+#random, #back{
+    margin-top: 3px;
+}
+
+
