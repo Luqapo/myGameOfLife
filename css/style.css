@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #13979E;
+    background-color: white;
 }
 
 #board div {
@@ -35,15 +35,35 @@ body {
 #play, #startGame, #random{
     width: 98px;
     height: 25px;
-    border-radius: 5px;
-    background-color: #006600;
+    border: 2px solid green;
+    border-radius: 12px;
+    background-color: white;
+    color: green;
+}
+
+#play:hover, #startGame:hover, #random:hover {
+    width: 98px;
+    height: 25px;
+    border: 2px solid green;
+    border-radius: 12px;
+    background-color: green;
     color: white;
 }
 
 #pause, #back{
     width: 97px;
     height: 25px;
-    border-radius: 5px;
+    border: 2px solid lightslategrey;
+    border-radius: 12px;
+    background-color: white;
+    color: lightslategrey;
+}
+
+#pause:hover, #back:hover{
+    width: 97px;
+    height: 25px;
+    border: 2px solid lightslategrey;
+    border-radius: 12px;
     background-color: lightslategrey;
     color: white;
 }
